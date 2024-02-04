@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Advent+Pro:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*{
+    font-family: 'Advent Pro';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    user-select: none;
+}
+
+:root{
+    --bgColor: #13131D;
+    --textColorDark:#878280;
+    --secColor:#4D67D5;
+    --textColor:#fff;
+    --bgColorDark:#1A1C2D;
+    --transition:all .4s;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--bgColor);
+}
+
