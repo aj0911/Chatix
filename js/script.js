@@ -1,22 +1,21 @@
+import { API_KEY } from "./config.js";
 const message = document.querySelector('#message')
 const send = document.querySelector('#send');
 const chats = document.querySelector('.chats'); 
-const API_KEY = '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';
 const API_URL = 'https://api.openai.com/v1/chat/completions';
-
 send.addEventListener('click',()=>{
     prompt = message.value;
     message.value = '';
     if(prompt!==''){
         send.style.display ='none';
-        placeholder = message.placeholder;
+        let placeholder = message.placeholder;
         message.placeholder = 'Generating Text';
-        sendHTML = `<div class="chat send">
+        let sendHTML = `<div class="chat send">
                             <span>${prompt}</span>
                         </div>`;
         chats.insertAdjacentHTML("beforeend",sendHTML);
         chats.scrollTop = chats.scrollHeight;
-        loadHTML = `<div class="chat response">
+        let loadHTML = `<div class="chat response">
                             <div class="loader"></div>
                         </div>`;
         chats.insertAdjacentHTML("beforeend",loadHTML);
@@ -38,8 +37,8 @@ send.addEventListener('click',()=>{
                 ]
             })
         }).then(res=>res.json()).then(data=>{
-            res = data.choices[0].message.content;
-            resHTML = `<div class="chat response">
+            const res = data.choices[0].message.content;
+            let resHTML = `<div class="chat response">
                         <span>${String(res)}</span>
                     </div>`;
             chats.removeChild(chats.lastChild);
@@ -48,6 +47,8 @@ send.addEventListener('click',()=>{
             chats.scrollTop = chats.scrollHeight;
             send.style.display ='flex';
             message.placeholder = placeholder;
-        }).catch(err=>console.log(err.message))
+        }).catch(err=>{
+            console.log(err.error.message)
+        })
     }
 })
