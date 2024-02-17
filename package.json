@@ -1,0 +1,31 @@
+{
+  "name": "chatix",
+  "version": "1.0.0",
+  "description": "Software for Chatix",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build":"electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aj0911/Chatix.git"
+  },
+  "keywords": [
+    "electron",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "Abhinav jha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aj0911/Chatix/issues"
+  },
+  "homepage": "https://github.com/aj0911/Chatix#readme",
+  "devDependencies": {
+    "electron": "^28.2.3",
+    "electron-builder": "^24.9.1"
+  }
+}
